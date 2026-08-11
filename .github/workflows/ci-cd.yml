@@ -21,7 +21,7 @@ jobs:
       - name: Set image tag
         shell: powershell
         run: |
-          IMAGE="ghcr.io/Srivenkatesh03/fluidai:${{ github.sha }}"
+          $IMAGE = "ghcr.io/srivenkatesh03/fluidai:${{ github.sha }}"
           "IMAGE=$IMAGE" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Install Python dependencies
