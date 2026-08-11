@@ -36,9 +36,11 @@ jobs:
           python -m compileall app
 
       - name: Login to GHCR
-        shell: powershell
-        run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+        uses: docker/login-action@v3
+        with:
+            registry: ghcr.io
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
         shell: powershell
