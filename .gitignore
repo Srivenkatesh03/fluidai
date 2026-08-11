@@ -1,3 +1,4 @@
+@"
 # Python
 __pycache__/
 *.py[cod]
@@ -23,7 +24,6 @@ Thumbs.db
 # Logs
 *.log
 
-# Kubernetes local files
-*.secret.yaml
-
+# GitHub Actions self-hosted runner
 actions-runner/
+"@ | Set-Content .gitignore
